@@ -7,12 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const world = 'world';
-export function hello() {
-    return __awaiter(this, arguments, void 0, function* (who = world) {
-        console.log(world);
-        console.log("test2");
-        return `Hello ${who}! `;
+import * as PIXI from 'pixi.js';
+export function init() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const app = new PIXI.Application();
+        yield app.init({ width: 640, height: 360 });
+        document.body.appendChild(app.canvas);
     });
 }
-hello();
+init();
